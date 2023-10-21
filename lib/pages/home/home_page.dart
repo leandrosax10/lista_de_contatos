@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../shared/widgets/custon_drawer.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -12,9 +14,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          appBar: AppBar(
-        title: Text("Home Page"),
-      )),
+        appBar: AppBar(
+          title: Text("Home Page"),
+        ),
+        drawer: CustonDrawer(),
+      ),
     );
   }
 }
