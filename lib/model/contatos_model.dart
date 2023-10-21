@@ -30,6 +30,8 @@ class ContatoBackModel {
   ContatoBackModel(this.objectId, this.nome, this.telefone, this.email, this.createdAt,
       this.updatedAt);
 
+  ContatoBackModel.criar(this.nome, this.telefone, this.email );
+
   ContatoBackModel.fromJson(Map<String, dynamic> json) {
     objectId = json['objectId'];
     nome = json['nome'];
@@ -40,6 +42,16 @@ class ContatoBackModel {
   }
 
   Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['objectId'] = objectId;
+    data['nome'] = nome;
+    data['telefone'] = telefone;
+    data['email'] = email;
+    data['createdAt'] = createdAt;
+    data['updatedAt'] = updatedAt;
+    return data;
+  }
+  Map<String, dynamic> toCreateJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['objectId'] = objectId;
     data['nome'] = nome;
