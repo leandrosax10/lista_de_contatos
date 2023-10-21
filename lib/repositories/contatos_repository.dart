@@ -22,8 +22,7 @@ class ContatosRepository {
 
   Future<void> criar(ContatoBackModel contatoBackModel) async {
     try {
-          await _dio.post("/Contatos", data: contatoBackModel.toCreateJson());
-          
+      await _dio.post("/Contatos", data: contatoBackModel.toCreateJson());
     } catch (e) {
       throw e;
     }

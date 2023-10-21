@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lista_de_contatos/pages/home/home_page.dart';
 
+import '../../pages/sobre/sobre_page.dart';
+
 class CustonDrawer extends StatelessWidget {
   const CustonDrawer({super.key});
 
@@ -9,6 +11,9 @@ class CustonDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(children: [
+        const SizedBox(
+          height: 40,
+        ),
         InkWell(
           child: Container(
               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
@@ -16,21 +21,18 @@ class CustonDrawer extends StatelessWidget {
               child: const Row(
                 children: [
                   FaIcon(
-                    FontAwesomeIcons.userSecret,
+                    FontAwesomeIcons.addressBook,
                     color: Color.fromARGB(255, 25, 3, 29),
                     size: 20,
                   ),
                   SizedBox(width: 5),
-                  Text("Dados cadastrais"),
+                  Text("Sobre"),
                 ],
               )),
           onTap: () {
-            /*  Navigator.pop(context);
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        const DadosCadastraisHivePageState() )); */
+            Navigator.pop(context);
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const SobrePage()));
           },
         ),
         const Divider(),
